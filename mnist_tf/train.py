@@ -1,3 +1,5 @@
+import os
+
 import bentoml
 import tensorflow as tf
 from tensorflow.keras import Model
@@ -92,8 +94,8 @@ def train():
             f"Test Accuracy: {test_accuracy.result() * 100}"
         )
 
-    # bentoml.tensorflow.save("tensorflow_mnist", model)
-    model.save("model")
+    model_path = os.path.join(os.path.dirname(__file__), "model")
+    model.save(model_path)
 
 
 if __name__ == "__main__":

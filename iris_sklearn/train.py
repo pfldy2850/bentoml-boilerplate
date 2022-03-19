@@ -1,3 +1,4 @@
+import os
 import pickle
 
 from sklearn import svm
@@ -13,7 +14,8 @@ def train():
     clf = svm.SVC(gamma="scale")
     clf.fit(X, y)
 
-    pickle.dump(clf, open("model", "wb"))
+    model_path = os.path.join(os.path.dirname(__file__), "model")
+    pickle.dump(clf, open(model_path, "wb"))
 
 
 if __name__ == "__main__":
