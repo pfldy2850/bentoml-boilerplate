@@ -23,9 +23,7 @@ $ pip install -r requirements.txt
 ```
 
 
-## Usage
-
-### Training a Model
+## Training a Model
 
 Run train.py to train the model.  
 To specify a project, fill the --project option with its name.
@@ -39,7 +37,7 @@ $ python train.py --project=mnist_tf
 $ python train.py --project=mnist_torch
 ```
 
-### Packing the model to BentoService
+## Packing the model to BentoService
 
 Run packer.py to pack the model to the service.  
 To specify a project, fill the --project option with its name.
@@ -54,7 +52,7 @@ $ python packer.py --project=mnist_torch
 ```
 
 
-### Model Serving via REST API
+## Model Serving via REST API
 
 To start a REST API model server locally with the IrisClassifier saved above, use the bentoml serve command followed by service name and version tag:
 
@@ -70,7 +68,7 @@ $ bentoml serve $saved_path
 ```
 
 
-### Containerize Model API Server
+## Containerize Model API Server
 
 One common way of distributing this model API server for production deployment, is via Docker containers. And BentoML provides a convenient way to do that.
 
@@ -86,6 +84,6 @@ Start a container with the docker image built from the previous step:
 $ docker run -p 5000:5000 iris-sklearn:latest --workers=2
 ```
 
-### Learning more about BentoML
+## Learning more about BentoML
 
 Check out the [BentoML documentation](https://docs.bentoml.org/en/0.13-lts/) for more usage examples.
